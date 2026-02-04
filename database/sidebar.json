@@ -1,0 +1,55 @@
+{
+  "main": [
+    {
+      "title": "Dashboard",
+      "url": "/private/dashboard",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "title": "Admin",
+      "url": "#admin",
+      "icon": "Settings",
+      "action": "openAdmin"
+    }
+  ],
+  "admin": [
+    {
+      "title": "Voltar",
+      "url": "#back",
+      "icon": "ArrowLeft",
+      "action": "goBack"
+    },
+    {
+      "title": "Usuário",
+      "url": "#",
+      "icon": "Users",
+      "items": [
+        {
+          "title": "Pessoas",
+          "url": "/private/admin/usuario/pessoas",
+          "icon": "User"
+        },
+        {
+          "title": "Cargos",
+          "url": "/private/admin/usuario/cargos",
+          "icon": "Briefcase"
+        },
+        {
+          "title": "Departamentos",
+          "url": "/private/admin/usuario/departamentos",
+          "icon": "Building2"
+        },
+        {
+          "title": "Perfis de Acesso",
+          "url": "/private/admin/usuario/perfis",
+          "icon": "Shield"
+        }
+      ]
+    },
+    {
+      "title": "Parâmetros",
+      "url": "/private/admin/parametro",
+      "icon": "Sliders"
+    }
+  ]
+}

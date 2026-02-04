@@ -5,7 +5,7 @@ import NextTopLoader from 'nextjs-toploader';
 export default function NextTopLoaderWrapper() {
   return (
     <NextTopLoader
-      color="var(--primary)"
+      color="var(--secondary)"
       height={3}
       showSpinner={false}
       shadow="0 0 8px var(--primary),0 0 4px var(--primary)"

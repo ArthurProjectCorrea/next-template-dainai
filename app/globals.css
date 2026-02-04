@@ -3,6 +3,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html,
+body,
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -16,6 +27,10 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+  --color-sidebar-icon-collapsed: var(--sidebar-icon-collapsed);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-sidebar-active-foreground: var(--sidebar-active-foreground);
+  --color-sidebar-active-collapsed: var(--sidebar-active-collapsed);
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
@@ -79,6 +94,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-icon-collapsed: oklch(0.95 0 0);
+  --sidebar-active: #164b9d;
+  --sidebar-active-foreground: oklch(0.95 0 0);
+  --sidebar-active-collapsed: rgba(255, 255, 255, 0.2);
 }
 
 .dark {
@@ -113,6 +132,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-icon-collapsed: oklch(0.95 0 0);
+  --sidebar-active: #164b9d;
+  --sidebar-active-foreground: oklch(0.95 0 0);
+  --sidebar-active-collapsed: rgba(255, 255, 255, 0.2);
 }
 
 @layer base {
@@ -122,4 +145,18 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.2);
+  }
+}
+
+.jumping {
+  animation: grow 0.6s ease;
 }
